@@ -1,3 +1,12 @@
+"""
+   Автор: AkyJlenok(R2BLZ)
+   Код был написанн мной, из сборной солянки от других авторов. На совершенность или
+   оптимизированность не претендую. Делал так, что бы работало
+
+   73!
+"""
+
+
 import asyncio
 import os
 import serial.tools.list_ports
@@ -45,7 +54,7 @@ async def get_media_info():
     current_session = sessions.get_current_session()
     
     if current_session:
-        if (current_session.source_app_user_model_id == 'A025C540.Yandex.Music_vfvw9svesycw6!App') or (any_app):
+        if (current_session.source_app_user_model_id == 'A025C540.Yandex.Music_vfvw9svesycw6!App') or (any_app):         #Для получения id приложения используйте current_session.source_app_user_model_id, во время включённого источника звука
             info = await current_session.try_get_media_properties_async()
 
                     # song_attr[0] != '_' ignores system attributes
